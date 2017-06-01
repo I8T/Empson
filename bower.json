@@ -1,0 +1,21 @@
+{
+  "name": "empson",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs-slider": "^6.1.1",
+    "jquery": "^3.2.1",
+    "angular": "^1.6.4",
+    "nouislider": "^9.2.0",
+    "angular-nouislider": "^0.3.1"
+  }
+}

@@ -1,0 +1,22 @@
+<div style="width:auto">
+<button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Videos</h3>
+    </div>
+    <div class="modal-body">
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-6">
+				<table class="table table-striped table-border">
+					<tr ng-repeat="v in videos" style="width:auto">
+						<td ng-if="v.myVedio"><div ng-bind-html="getVideoAsHtml(v.myVideo)" style="width:auto;"></div></td>
+					</tr>
+				</table>
+			</div>
+      <div class="col-md-9 col-sm-4 col-xs-6">
+        <label ng-if="!v.myVideo">Videos are not available.</label>
+      </div>
+		</div>
+    </div>
+  </div>

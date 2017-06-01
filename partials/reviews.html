@@ -1,0 +1,289 @@
+<div class="main-content">
+<section style="background-color: #f5f5f5;">
+	<div class="container">
+		<ul style="display: inline-flex;list-style-type: none;">
+			<li style="margin-right: 9px;"><a  class="home" href="#/">Home ></a></li>
+			<li class="active"><a href="#/reviews">Reviews</a></li>
+		</ul>
+	</div>
+	<img src="images/sardinia-slider.jpg">
+</section>
+<div class="container">
+	<div class="row">
+		<!--Pagination div --->
+
+					<div class="pagination-div" ng-show="reviews.length">
+						<ul style="list-style-type: none;" class="ulpagination">
+							<li>
+								<a ng-show="curPage>=0" ng-click="curPage=curPage-1"><i class="fa fa-chevron-left arrowpagination" aria-hidden="true" style="cursor: pointer;"></i></a>
+								<!-- <button type="button">PREV</button> -->
+							</li>
+							<li>
+							<span class="reviewPages">Page {{curPage + 1}} of  {{ numberOfPages(reviews.length) }}</span>
+							</li>
+							<li>
+							<a ng-show="curPage <= reviews.length/pageSize - 1"	ng-click="curPage = curPage+1"><i class="fa fa-chevron-right arrowpagination" aria-hidden="true" style="cursor: pointer;"></i> </a>
+							</li>
+						</ul>
+					</div>
+
+		<div class="col-md-4">
+					<ul style="list-style-type: none;" ng-init="countryopen=true">
+						<li class="listdata"><h1>Narrow Here</h1></li>
+						<li>
+							<div class="form-group has-feedback" >
+							<input type="text" class="form-control" placeholder="Search here" ng-model="searchContent" style="border-radius: 15px;">
+							<i class="fa fa-search form-control-feedback searchicon"></i>
+						</div>
+					</li>
+						<li class="listdata"><a><i class="fa fa-plus plusicon" ng-click="countryval=true;countryopen=false" ng-show="countryopen" ></i><i class="fa fa-minus plusicon" ng-show="countryval" ng-click="countryval=false;countryopen=true"></i></a><span class="searchopt">Country</span></li>
+
+						<li class="listdata" ng-model="conval">
+							<div ng-model="countryOption" class="OptionData" ng-show="countryval">
+								<div class="cntryopt"  ng-repeat="countryData in country">
+									<div  class="col-sm-3 col-md-3 col-xs-3  square-radio" ng-click="divselected">
+										<input ng-click="countryChange(countryData.countryID,countryData.country)" type="radio" name="radiobutton" class="radiobtn" class="square-radio--content">
+									</div>
+									<div ng-model="selectedcountry" class="" style="margin-left: 1cm;">{{countryData.country}}</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="listdata"  ng-init="regionopen=true"><a><i class="fa fa-plus plusicon" ng-click="regionOption=true;regionopen=false" ng-show="regionopen" ></i><i class="fa fa-minus plusicon" ng-show="regionOption" ng-click="regionOption=false;regionopen=true"></i></a><span class="searchopt">Region</span></li>
+						<li class="listdata">
+							<div ng-model="regionOption" class="OptionData" ng-show="regionOption" ng-if="region">
+								<div class="cntryopt"  ng-repeat="regionData in region">
+									<div  class="col-sm-3 col-md-3 col-xs-3  square-radio" ng-click="divselected">
+										<input ng-click="selectedRegion(regionData.region)" type="radio" name="radiobtn" class="radiobuttn" class="square-radio--content">
+									</div>
+									<div ng-model="selectedregion" class="" style="margin-left: 1cm;">{{regionData.region}}</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="listdata" ng-init="wineryopen=true"><a>
+							<i class="fa fa-plus plusicon" ng-click="wineryOption=true;wineryopen=false" ng-show="wineryopen" ></i><i class="fa fa-minus plusicon" ng-show="wineryOption" ng-click="wineryOption=false;wineryopen=true"></i></a><span class="searchopt">Winery</span></li>
+
+							<li class="listdata">
+								<div ng-model="wineryOption" class="OptionData" ng-show="wineryOption">
+									<div class="cntryopt"  ng-repeat="wineryData in winery">
+										<div  class="col-sm-3 col-md-3 col-xs-3  square-radio" ng-click="divselected">
+											<input  ng-click="wineData(wineryData.producerID,wineryData.producer)" type="radio" name="radiowinery" class="radiobuttn" class="square-radio--content" ng-value=''>
+										</div>
+										<div ng-model="selectedwinery" class="" style="margin-left: 1cm;">{{wineryData.producer}}</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="listdata" ng-init="wineopen=true"><a>
+								<i class="fa fa-plus plusicon" ng-click="wineOption=true;wineopen=false" ng-show="wineopen" ></i><i class="fa fa-minus plusicon" ng-show="wineOption" ng-click="wineOption=false;wineopen=true"></i></a><span class="searchopt">Wine</span></li>
+
+								<li class="listdata">
+									<div ng-model="wineOption" class="OptionData" ng-show="wineOption" ng-if="wines">
+										<div class="cntryopt"  ng-repeat="wineData in wines">
+											<div  class="col-sm-3 col-md-3 col-xs-3  square-radio" ng-click="divselected">
+												<input  type="radio" ng-click="clickedwine(wineData.wine)" name="radiowine" class="radiobuttn" class="square-radio--content" ng-value=''>
+											</div>
+											<div ng-model="selectedwine" class="" style="margin-left: 1cm;">{{wineData.wine}}</div>
+										</div>
+									</div>
+								</li>
+
+								<li class="listdata" ng-init="vintageopen=true">
+									<a>
+										<i class="fa fa-plus plusicon" ng-click="vintageOption=true;vintageopen=false" ng-show="vintageopen" ></i>
+										<i class="fa fa-minus plusicon" ng-show="vintageOption" ng-click="vintageOption=false;vintageopen=true"></i>
+									</a>
+									<span class="searchopt">Vintage</span>
+								</li>
+
+								<li class="listdata">
+									<div  ng-show="vintageOption">
+										<input type = "text" id = "price" name="price" style = "border:0; color:#b04a23; font-weight:bold;">
+										<div id = "slider-3" ng-click="getVintageOpt()" ng-model="rangeyear"></div>
+										<span ng-model="maxValue"></span>
+										<span ng-model="minValue"></span>
+									</div>
+								</li>
+
+								<li class="listdata" ng-init="publicationopen=true">
+									<a>
+										<i class="fa fa-plus plusicon" ng-click="publicationOption=true;publicationopen=false" ng-show="publicationopen" ></i>
+										<i class="fa fa-minus plusicon" ng-show="publicationOption" ng-click="publicationOption=false;publicationopen=true"></i>
+									</a>
+									<span class="searchopt">Publications</span>
+								</li>
+
+								<li class="listdata">
+									<div ng-model="publicationOption" class="OptionData" ng-show="publicationOption">
+										<div class="cntryopt"  ng-repeat="publicationData in publication">
+											<div  class="col-sm-3 col-md-3 col-xs-3  square-radio" ng-click="divselected">
+												<input  type="radio" ng-click="clickedpublication(publicationData.publicationID)" name="radiowine" class="radiobuttn" class="square-radio--content" ng-value=''>
+											</div>
+											<div ng-model="selectedpublicaton" class="" style="margin-left: 1cm;">{{publicationData.publication}}</div>
+										</div>
+									</div>
+								</li>
+
+
+								<li class="listdata" ng-init="scoreopen=true">
+									<a>
+										<i class="fa fa-plus plusicon" ng-click="scoreOption=true;scoreopen=false" ng-show="scoreopen" ></i>
+										<i class="fa fa-minus plusicon" ng-show="scoreOption" ng-click="scoreOption=false;scoreopen=true"></i>
+									</a>
+									<span class="searchopt">Score</span>
+								</li>
+
+								<li class="listdata">
+									<div ng-model="scoreOption" ng-show="scoreOption">
+										<!-- <label for = "price">S</label> -->
+										<input type = "text" id = "score" style = "border:0; color:#b04a23; font-weight:bold;">
+										<div id = "slider-4" ng-click="clikedScore()"></div>
+										<span ng-model="minScore"></span>
+										<span ng-model="maxScore"></span>
+									</div>
+								</li>
+
+								<li class="listdata" ng-init="dateopen=true">
+									<a>
+										<i class="fa fa-plus plusicon" ng-click="dateOption=true;dateopen=false" ng-show="dateopen" ></i>
+										<i class="fa fa-minus plusicon" ng-show="dateOption" ng-click="dateOption=false;dateopen=true"></i>
+									</a>
+									<span class="searchopt">Dates</span>
+								</li>
+								<li class="listdata">
+									<div ng-model="dateOption" ng-show="dateOption" class="">
+									<!-- <input class="col-md-5" type = "text" id = "datepicker-8"> -->
+
+									<div class="col-sm-5 form-group">
+				            <div class='input-group date' id='datepicker-8' style="width: 144px;">
+				                <input type='text' class="form-control datepick" placeholder="MIN Date"  ng-model="mindate" style="padding:0px"/>
+				                <span class="input-group-addon">
+				                    <span class="glyphicon glyphicon-calendar">
+				                    </span>
+				                </span>
+				            </div>
+
+        					</div>
+
+
+									<span class="col-sm-2 rangeDate">TO</span>
+
+									<div class="col-sm-5 form-group">
+				            <div class='input-group date' id='datepicker-9' style="width: 144px;">
+				                <input type='text' class="form-control datepick" placeholder="MAX Date" ng-model="maxdate" style="padding:0px"/>
+				                <span class="input-group-addon">
+				                    <span class="glyphicon glyphicon-calendar">
+				                    </span>
+				                </span>
+				            </div>
+        					</div>
+									</div>
+								</li>
+							</ul>
+					</div>
+					<div class="col-sm-8">
+						<span ng-if="reviews">
+							<div class="section clearfix linktable">
+								<div class="row">
+										<div class="col-sm-2">
+											<label for="sel1">Sort By  :</label>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<select class="form-control sortOptreview" id="sel1">
+													<option>text</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div ng-if="(reviews  | filter:producer | filter:vintage |filter:selectedcountry | filter:selectedregion |filter:selectedwinery | filter:selectedwine | filter:searchContent |filter:selectedpublicaton).length<1">
+										<div class= "text-center" style="font-size: 25px;color: #b04a23;;margin-top: 80px;">
+											Result not found
+										</div>
+									</div>
+
+									<div class="col-xs-offset-4 col-md-4" ng-show="loading" style="padding-bottom: 10px; text-align:center;">
+									<h2>Loading Reviews</h2>
+									<p><i class="fa fa-refresh fa-spin fa-4x fa-fw margin-bottom"></i></p>
+									</div>
+
+									<div ng-if="!reviews">
+										<div class="section clearfix linktable">
+											<div class="container">
+												<div class= "col-md-3 col-sm-4 col-xs-6 text-center">
+													<div style="font-size: 31px;margin-top: 80px;">
+														<span>-Data not Found</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- <div ng-repeat="r in reviews | filter:producer |filter:selectedcountry | filter:selectedregion |filter:selectedwinery | filter:selectedwine | filter:searchContent | filter:selectedpublicaton | pagination: curPage * pageSize | limitTo: pageSize"> -->
+									<div ng-repeat="r in reviews |filter:selectedcountry | filter:selectedregion|filterVintage:minValue:maxValue |filter:selectedwinery | filter:searchContent | filter:selectedpublicaton |filterScore:minScore:maxScore | pagination: curPage * pageSize | limitTo: pageSize">
+										<div class= "row text-center">
+											<div class="col-sm-3">
+												<img src="{{r.folderName | removeSpaces}}/{{r.image}}" style="height: 300px;width: auto;">
+											</div>
+											<div class="col-sm-9" style="text-align: justify;">
+												<h1 class="title">{{r.wine}}</h1>
+												<h2 style="color: rgba(176, 74, 35, 0.9)">{{r.score}} Points ,International wine cellar</h2>
+												<p style="color: black;">{{r.description}}</p>
+												<button class="btn btn-primary viewbtnreview">View</button>
+												<span class="iconreview"><i class="fa fa-folder-open" aria-hidden="true"></i></span>
+												<span class="iconreview"><i class="fa fa-plus addmoreReviews" aria-hidden="true"></i></span>
+												<span class="iconreview"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+												<!-- <a target="_blank" href="{{r.producer | removeSpaces}}/{{r.link}}" class="link"><span>Read Review</span></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+						</span>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+
+<!--  OLD TABLE FORMAT
+<table class="table table-striped table-border">
+<thead>
+<tr>
+<th>Producer</th>
+<th>Wine</th>
+<th>Vintage</th>
+<th>Publication / Date</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="r in reviews | filter:producer | filter:vintage | filter:score | limitTo: 15">
+<td>{{r.producer}}</td>
+<td><a ng-click="open(r);">{{r.wine}}</a></td>
+<td>{{r.vintage}}</td>
+<td>{{r.theDate}}</td>
+<td>{{r.score}}</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="5" class="text-center">
+<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+</td>
+</tr>
+</tfoot>
+</table>
+-->
+
+<!-- REMOVED TO ADD TO ABOVE ROW
+</div>
+-->
+</div>
+</div>

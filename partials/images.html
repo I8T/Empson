@@ -1,0 +1,19 @@
+<div>
+  <button type="button" class="close" ng-click="cancel();">
+          <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+      </button>
+      <div class="modal-header">
+          <h3 class="modal-title">Gallery</h3>
+      </div>
+      <div class="modal-body">
+  		<div class="row">
+  			<div class="col-md-12">
+  					<div ng-repeat="i in images" style="margin: 0px; text-align: center;">
+                <div class="col-md-4">
+    						      <p class="img-container"><img src="{{i.producer}}/{{i.image}}"  alt="{{i.name}}" style="width: 100%;"/></p>
+                </div>
+  					</div>
+  			</div>
+  		</div>
+      </div>
+</div>

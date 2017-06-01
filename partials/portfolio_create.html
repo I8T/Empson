@@ -1,0 +1,66 @@
+<div class="main-content">
+<section style="background-color: #f5f5f5;">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="#/">Home</a></li>
+			<li class="active">Portfolio</li>
+		</ol>
+	</div>
+</section>
+ <div class="container" style="padding-bottom: 20px;">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Portfolio</h2>
+				<div class="separator-2"></div>
+			</div>
+		</div>
+		<!-- isotope filters start -->
+		<div class="row">
+		<div class="col-md-12">
+		<div class="filters" opt-kind ok-key="filter">
+			<label>Select Country:</label>
+		<select class="selectpicker">
+					<option href="#" ng-click="showItalyRegions = false" ok-sel="*" class="active">All Countries</option>
+					<option ng-click="showItalyRegions = true" href="#" ok-sel=".Italy">Italy</option>
+		      <option ng-click="showItalyRegions = false" href="#" ok-sel=".NewZealand">New Zealand</option>
+		      <option ng-click="showItalyRegions = false" href="#" ok-sel=".Chile">Chile</option>
+  	</select>
+
+		</div>
+		</div>
+		</div>
+		<div  id="regionFilter" ng-show="showItalyRegions">
+				<div class="filters" opt-kind ok-key="filter">
+					<select class="selectpicker">
+						<option  ok-sel=".Abruzzo">Abruzzo</option>
+						<option  ok-sel=".Basioptioncata">Basioptioncata</option>
+						<option  ok-sel=".Campania">Campania</option>
+						<option  ok-sel=".Lombardy">Lombardy</option>
+						<option  ok-sel=".FriuoptionVeneziaGiuoptiona">Friuoption-Venezia Giuoptiona</option>
+						<option  ok-sel=".Marche">Marche</option>
+						<option  ok-sel=".Piedmont">Piedmont</option>
+						<option  ok-sel=".Pugoptiona">Pugoptiona</option>
+						<option  ok-sel=".Sardinia">Sardinia</option>
+						<option  ok-sel=".Sicily">Sicily</option>
+						<option  ok-sel=".TrentinoAltoAdige">Trentino-Alto Adige></option>
+						<option  ok-sel=".Tuscany">Tuscany</option>
+						<option  ok-sel=".Umbria">Umbria</option>
+						<option  ok-sel=".Veneto">Veneto</option>
+			  	</select>
+			</div>
+		</div>
+		<!-- isotope filters end -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<ul id="isotopeContainer" isotope-container class="isotope">
+					<li ng-repeat="p in producers" isotope-item class="{{p.country | removeSpaces}} {{p.region}}" style="width: 200px; float: left; margin: 5px; overflow: hidden;">
+							<a href="#/winery/{{p.producer}}"><img src="images/{{p.producer | removeSpaces}}.gif" alt="{{p.producer}}" style="height: 200px; width: 200px"></a>
+							<!--<a ng-click="open(p);" class="btn btn-gray" style="max-width: 125px; min-width: 125px; font-size: 10px; margin-bottom: 0px;">{{p.producer}}</a>-->
+							<a class="btn btn-gray" style="max-width: 200px; min-width: 200px; font-size: 1em; margin-top: -15px;" href="#/winery/{{p.producer}}">{{p.producer}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

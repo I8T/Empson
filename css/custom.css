@@ -1,0 +1,433 @@
+/*
+Theme Name: iDea - Clean & Powerful Bootstrap Theme
+Author: HtmlCoder
+Author URI: http://www.htmlcoder.me
+Author e-mail: htmlcoder.me@gmail.com
+Version: 1.2.1
+Created: August 2014
+License URI: http://support.wrapbootstrap.com/
+File Description: Place here your custom CSS styles
+*/
+  .addmoreReviews{
+    background-color: #333333;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  .contactdetail{
+    margin-top: 30px;
+  }
+  .list-icons li
+  {
+    padding:0px!important;
+  }
+  .list-icons{
+    font-size:20px;
+  }
+  .footerheader{
+    font-size:20px
+  }
+  .linkDiv{
+    color:white;
+    font-size:20px;
+    margin-top: -12px;
+  }
+  .footerlink{
+    color: white;
+    font-size: 23px;
+    border: 1px solid #b04a23;
+    padding: 7px;
+    margin-right:15px;
+    border-radius: 22px;
+    margin-top:15px;
+    background-color: #b04a23;
+  }
+
+  .ulpagination{
+    list-style-type: none;
+    display: inline-flex;
+  }
+  .pagination-div{
+    float: right;
+    margin-top: 15px;
+  }
+  .reviewPages{
+    padding: 15px;
+  }
+  .arrowpagination{
+    color: black;
+  }
+  .datepick{
+    width: auto;
+    max-width: 104px!important;
+  }
+  .rangeDate{
+    position: relative;
+      left: 22px;
+      font-weight: bold;
+  }
+
+  .ui-widget-header{
+    background: #b04a23 !important;
+    }
+  .sortOptreview{
+    width: 180px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    color: black;
+  }
+  .viewbtnreview{
+      background: #333333;
+      border:none;
+  }
+  .iconreview{
+    margin-left: 20px;
+    font-size: 22px;
+    color: #333333
+  }
+
+input[type='radio'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    margin-top: -1px;
+}
+input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;
+
+}
+input[type='radio']:checked:before {
+    background:#b04a23;
+}
+
+.square-radio {
+  border: 1px solid #ddd;
+  margin: 2px 4px 2px 7px;
+  width: 24px;
+  padding: 2px;
+  height: 24px;
+  position: relative;
+}
+.square-radio--clicked .square-radio--content{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #b04a23;
+}
+
+
+
+.outerdiv{
+    border: 1px solid #ddd;
+    width: 20px;
+    padding: 0px;
+    height: 20px;
+    margin: 4px 18px 5px 11px;
+}
+.cntryopt{
+      border-bottom: 1px solid #ddd
+}
+.innerDiv{
+  background-color: #6a2c15
+}
+.OptionData{
+  font-size: 19px;
+  border: 1px solid #ddd;
+  overflow: scroll;
+  max-height: 200px;
+}
+.searchopt{
+  color: #666666;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+}
+.plusicon{
+  font-size: 19px;
+    background-color: #b04a23;
+    color: white;
+    width: 35px;
+    padding: 9px;
+    border-radius: 8px;
+  }
+  .listdata{
+    margin-bottom: 15px;
+  }
+.home{
+  color: #666666;
+}
+.searchicon{
+    background-color: #ccc;
+    border-radius: 19px;
+}
+.searchdiv{
+      margin-left: 3cm;
+}
+.cart{
+    font-weight: bold;
+    background-color: white;
+    position:relative;
+    color: #666666;
+    font-size: 18px;
+    cursor: pointer;
+}
+.cartdiv{
+  float:right;
+  margin-top: 25px;
+}
+.reviewcarosal .owl-item{
+  width:auto!important;
+  max-width:190px;
+}
+.portfolioData{
+  width: 200px;
+  float: left;
+  margin: 5px;
+  transform: translate3d(250px, 0px, 0px);
+  overflow: hidden;
+}
+.main-content{
+  height: auto;
+  min-height: 216px;
+}
+.owl-theme .owl-controls .owl-nav [class*=owl-] {
+    margin: 14px 68px;
+    background: #b04a23;
+}
+embed{
+  width:auto;
+}
+.imgabout{
+	width: auto;
+	max-width: 100%;
+}
+.imghot{
+	width: auto;
+  float: left;
+  margin: 9px;
+}
+.listindex{
+	z-index: 2;
+}
+/*.owl-item , .imgcarousel{
+	width:auto!important;
+	max-width: 388px;
+}*/
+li .portfolio:hover{
+	box-shadow: 0 0 1em 1em #ccc;
+}
+.modal-dialog{
+	width:auto;
+	max-width:50%;
+}
+.reviewSearchers{
+	margin-top: 90px;
+	background: #ddd;
+	padding: 20px;
+	float:left;
+}
+.img-container {
+	max-height: auto;
+	max-width: auto;
+	display: block;
+}
+.hometiles{
+  height: 100%;
+  max-height: 168px;
+}
+.lead{
+  margin-right: 2cm;
+}
+.btnSubs{
+		color: #ffffff;
+    width: 100%;
+    max-width: 364px;
+    text-align: center;
+		background: black;
+		font-weight: bolder;
+		border: none;
+}
+.sub_btn{
+		border-radius: 31px;
+    font-weight: bold;
+}
+.header-top {
+	background-color: #2e2828;
+}
+
+.header-top .social-links li a {
+	color: #fff;
+}
+
+.header-top-dropdown .dropdown>button {
+	color: #fff;
+}
+
+.footer-content  p{
+	color: #fff;
+}
+
+.footer  .list-icons li a{
+	color: #fff;
+}
+
+.footer-content  .list-icons li{
+	color: #fff;
+}
+
+.parallax-bg-3 {
+  background: url("../images/sicily-background.jpg") 50% 0px no-repeat;
+}
+.title {
+	padding-top: 15px;
+}
+.linktable img{
+	width: 80%; padding: 10px; display: initial;
+}
+.img-rounded {
+  border-radius: 20px;
+}
+
+.owl-carousel img {
+	width: 100%;
+}
+
+#owl-demo .item {
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#bar{
+  width: 0%;
+  max-width: 100%;
+  height: 4px;
+  background: #7fc242;
+}
+#progressBar{
+  width: 100%;
+  background: #EDEDED;
+}
+.text-overlay {
+	position:absolute;
+    color:#FFF;
+    font-size:12px;
+    display:block;
+}
+.breadcrumb {
+	background-color: #f5f5f5;
+	/*padding-left: 20px;*/
+}
+
+.owl-jumbotron .owl-controls .owl-nav [class*=owl-] {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #d6d6d6;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.separator-2 {
+	width: 100%;
+}
+
+.nav-stacked a {
+	cursor: pointer;
+}
+
+.modal-lg {
+    width: 700px;
+}
+
+.wineSpecs p {
+	margin-bottom: 0px;
+}
+
+.searchPfolio{
+	float:right;margin-right: 67px;margin-top:0px
+}
+
+@media only screen and (max-width: 360px) {
+  .imghotOff{
+    display:none;
+  }
+	.btnSubs {
+    width: 265px;
+    padding: 1px;
+    font-size: 15px;
+    margin-right: 18px;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.imagefloat {
+		float: left;
+    margin: 19px;
+	}
+	.learnmorebtn{
+		margin-left: 74px;
+	}
+	.title{
+    font-size: 25px;
+	}
+	.imagebottle{
+		float: left;
+		margin-right: 22px;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.img-container {
+		max-height: 160px;
+		max-width: 160px;
+		display: flex;
+	}
+
+}

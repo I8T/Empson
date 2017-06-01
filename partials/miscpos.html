@@ -1,0 +1,18 @@
+<button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Miscellaneous POS</h3>
+    </div>
+    <div class="modal-body">
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-striped table-border">
+					<tr ng-repeat="mp in miscpos">
+						<td><i class="fa fa-file-pdf-o"></i></td>
+						<td><a target="_blank" href="{{mp.producer}}/{{mp.pos}}">{{mp.name}}</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+    </div>

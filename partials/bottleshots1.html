@@ -1,0 +1,18 @@
+<button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Test Bottle Shots 1</h3>
+    </div>
+    <div class="modal-body">
+		<div class="row">
+			<div class="col-md-12">
+				<ul id="isotopeContainer" isotope-container class="isotope">
+					<li ng-repeat="b in bottleshots" isotope-item style="height: 150px; float: left; margin: 5px; overflow: hidden;">
+							<img src="{{b.producer}}/{{b.image}}"  alt="{{b.name}}" style="height: 150px; width: 50px; margin-left; 50px;">
+							<p>{{b.name}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+    </div>

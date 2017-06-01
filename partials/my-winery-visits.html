@@ -1,0 +1,20 @@
+    <button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">View {{wineryVisit.producer}}</h3>
+    </div>
+    <div class="modal-body">
+		<p><strong>Address:</strong> {{wineryVisit.address}}</p>
+		<p><strong>Directions:</strong> {{wineryVisit.directions}}</p>
+		<p><strong>Contact:</strong> {{wineryVisit.contact}}</p>
+		<p><strong>Phone Number:</strong> {{wineryVisit.phone}}</p>
+		<p><strong>Email Address:</strong> {{wineryVisit.email}}</p>
+		<p><strong>Website:</strong> <a href="http://{{wineryVisit.websiteLink}}" target="_blank">{{wineryVisit.websiteLink}}</a></p>
+		<p><strong>Tastings & Tours available:</strong> {{wineryVisit.tastings}}</p>
+		<p><strong>Days/Times available during week:</strong> {{wineryVisit.days}}</p>
+		<p><strong>By Appointment only:</strong> {{wineryVisit.appointment}}</p> 
+		<p><strong>Applicable Fees:</strong> {{wineryVisit.fees}}</p>
+		<p><strong>English Speaking Staff:</strong> {{wineryVisit.english}}</p>
+		<p><strong>Nearest Cities:</strong> {{wineryVisit.city}}</p>
+    </div>

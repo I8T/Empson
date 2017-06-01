@@ -1,0 +1,102 @@
+<div class="main-content">
+<section style="background-color: #f5f5f5;">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="#/">Home</a></li>
+			<li class="active">Portfolio</li>
+		</ol>
+	</div>
+</section>
+
+
+ <div class="container" style="padding-bottom: 20px;">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Portfolio</h2>
+				<div class="separator-2"></div>
+			</div>
+		</div>
+		<!-- isotope filters start -->
+		<!--div class="row">
+		<div class="col-md-12">
+		<div class="filters" opt-kind ok-key="filter">
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#" ng-click="showItalyRegions = false" ok-sel="*">All Countries</a></li>
+				<li><a ng-click="showItalyRegions = true" href="#" ok-sel=".Italy">Italy</a></li>
+				<li><a ng-click="showItalyRegions = false" href="#" ok-sel=".NewZealand"> New Zealand </a></li>
+				<li><a ng-click="showItalyRegions = false" href="#" ok-sel=".Chile">Chile</a></li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		<div class="row" id="regionFilter" ng-show="showItalyRegions">
+			<div class="col-md-12">
+				<div class="filters" opt-kind ok-key="filter">
+					<ul class="nav nav-pills">
+						<li class="active"><a href="#" ok-sel="*">All Regions</a></li>
+						<li><a href="#" ok-sel=".Abruzzo">Abruzzo</a></li>
+						<li><a href="#" ok-sel=".Basilicata">Basilicata</a></li>
+						<li><a href="#" ok-sel=".Campania">Campania</a></li>
+						<li><a href="#" ok-sel=".Lombardy">Lombardy</a></li>
+						<li><a href="#" ok-sel=".FriuliVeneziaGiulia">Friuli-Venezia Giulia</a></li>
+						<li><a href="#" ok-sel=".Marche">Marche</a></li>
+						<li><a href="#" ok-sel=".Piedmont">Piedmont</a></li>
+						<li><a href="#" ok-sel=".Puglia">Puglia</a></li>
+						<li><a href="#" ok-sel=".Sardinia">Sardinia</a></li>
+						<li><a href="#" ok-sel=".Sicily">Sicily</a></li>
+						<li><a href="#" ok-sel=".TrentinoAltoAdige">Trentino-Alto Adige</a></li>
+						<li><a href="#" ok-sel=".Tuscany">Tuscany</a></li>
+						<li><a href="#" ok-sel=".Umbria">Umbria</a></li>
+						<li><a href="#" ok-sel=".Veneto">Veneto</a></li>
+					</ul>
+				</div>
+			</div>
+		</div-->
+		<!-- isotope filters end -->
+
+
+		<!--div class="section clearfix linktable"-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+							<div class="col-sm-3 form-group">
+								<select class="form-control" ng-model="countryOption" style="width:auto;margin-left:35px" ng-options="countryData.country for countryData in country" ng-change="countryChange()">
+									<option value="">--Select country--</option>
+								</select>
+							</div>
+
+							<!--div ng-if="region" class="regiondiv"-->
+							<div class="col-sm-3  form-group regiondiv" style="display:none">
+								<select class="form-control" ng-model="regionOption" style="width:auto;margin-left:35px" ng-options="regionData.region for regionData in region">
+									<option value="">--Select Region--</option>
+								</select>
+							</div>
+						<!--/div-->
+					</div>
+			  </div>
+
+				<div ng-if="(producers | filter:searchContent | filter:countryOption.country | filter:regionOption.region).length<1">
+						<div class= "text-center" style="font-size: 25px;color: #b04a23;">
+						Result not found
+					</div>
+				</div>
+		<!-- <div class="row">
+			<div class="col-md-12"> -->
+			<ul isotope-container="isotope-container" class="isotope">
+				<!-- <ul id="">
+					<li class="portfolioData" ng-repeat="p in producers | filter:searchportfolio | filter:countryOption.country | filter:regionOption.region " isotope-item class="{{p.country | removeSpaces}} {{p.region}}">
+							<a href="#/winery/{{p.producer}}"><img src="images/{{p.producer | removeSpaces}}.gif" alt="{{p.producer}}" style="height: 200px; width: 200px"></a>
+							<a ng-click="open(p);" class="btn btn-gray" style="max-width: 125px; min-width: 125px; font-size: 10px; margin-bottom: 0px;">{{p.producer}}</a>
+							<a class="btn btn-gray" style="max-width: 200px; min-width: 200px; font-size: 1em; margin-top: -15px;" href="#/winery/{{p.producer}}">{{p.producer}}</a>
+					</li>
+				</ul> -->
+
+				<li ng-repeat="p in producers | filter:searchContent | filter:countryOption.country | filter:regionOption.region " isotope-item="isotope-item" style="width: 170px; float: left; margin: 5px; overflow: hidden;" onclick="removeItem(this)">
+					<div>
+							<a href="#/winery/{{p.producer}}"><img src="images/{{p.producer | removeSpaces}}.gif" alt="{{p.producer}}"></a>
+							<a class="btn btn-gray" style="font-size: 1em; margin-top: -15px;" href="#/winery/{{p.producer}}">{{p.producer}}</a>
+					</div>
+			</li>
+		</ul>
+	</div>
+</div>

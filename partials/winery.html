@@ -1,0 +1,191 @@
+<div class="main-content">
+	<section style="background-color: #f5f5f5;">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="#/">Home</a></li>
+				<li><a href="#/portfolio">Portfolio</a></li>
+				<li class="active">{{winery.producer}}</li>
+			</ol>
+		</div>
+	</section>
+	<div class="container" style="padding-bottom: 20px;">
+		<div class="row">
+			<div class="col-md-12">
+				<div ng-hide="hideWines"><h2>{{winery.producer}} - {{selWineName}}</h2>
+				</div>
+				<div ng-hide="hideWinery"><h2>{{winery.producer}}</h2></div>
+				<div ng-hide="hideReviews"><h2>{{winery.producer}}</h2></div>
+
+				<div class="row">
+					<div class="col-md-6 col-xs-offset-3" style="text-align:center;">
+						<img src="./{{winery.folderName}}/wineryHome.jpg"/>
+					</div>
+			</div>
+				<div class="separator-2"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-3 col-xs-3">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="listindex"><a ng-click="showWinery();">Winery Overview</a></li>
+					<li class="listindex"><a ng-click="showArticles();">Articles</a></li>
+					<li class="listindex"><a ng-click="openBios(bios);">Bios</a></li>
+					<li class="listindex"><a target="_blank" href="{{winery.folderName}}/{{winery.producer}} Fact Sheet.pdf">Fact Sheet</a></li>
+					<li class="listindex"><a ng-click="openVideos(videos, 700);">Videos</a></li>
+					<li class="listindex"><a ng-click="openWineryVisit(winery);">Winery Visits</a></li>
+					<li class="listindex"><a ng-click="openMaps(maps);">Maps</a></li>
+					<li class="listindex"><a href="http://{{winery.websiteLink}}">Website</a></li>
+					<li class="listindex"><a ng-click="showWines();">Wines</a></li>
+					<li class="listindex"><a ng-click="openImages(images);">Gallery</a></li>
+					<!-- obsolete
+					<li><a ng-click="openSalesTools();">Winery Sales Tools</a></li>
+					<li><a ng-click="showReviews();">Reviews/Scores</a></li>
+					<li><a ng-click="openLabels(labels);">Labels</a></li>
+					<li><a ng-click="openSellSheets(sellSheets);">Sell Sheets</a></li>
+					<li><a ng-click="openBottleShots(bottleShots);">Bottle Shots</a></li>
+					<li><a ng-click="openTrainingCards(trainingCards);">Training Cards</a></li>
+					<li><a ng-click="openMiscPos(miscpos);">Miscellaneous POS</a></li>
+					-->
+				</ul>
+
+			</div>
+			<div class="col-md-9" ng-hide="hideWinery">
+				<div class="row">
+					<div class="col-md-12">
+						<div ng-bind-html="wineryDescription"></div>
+						<div ng-bind-html="wineryQuickFacts"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9" ng-hide="hideMap">
+				<h2>Map</h2>
+				<div class="row">
+					<div id="map"></div>
+					<!--
+					<div ng-repeat="m in maps">
+						<img src="{{m.producer | removeSpaces}}/{{m.image}}" alt="{{m.name}}"/>
+					</div>
+					-->
+				</div>
+			</div>
+
+			<div class="col-md-9" ng-hide="true">
+				<h2>Videos</h2>
+				<div class="row">
+					<div ng-bind-html="getVideoAsHtml(v.myVideo)"></div>
+				</div>
+			</div>
+
+			<div class="col-md-9" ng-hide="hideWines">
+				<div class="row" style="">
+					<div class="col-sm-3" style="float:right">
+							<select class="form-control" ng-model="searchText" ng-options="contents as contents.name for contents in content">
+								<option value="">---Select Volume---</option>
+								<!--option ng-repeat="contents in content" value="{{contents.value}}" ng-init="contents.name[]">{{contents.name}}</option-->
+							</select>
+						</div>
+							<div class="col-sm-3  otherdiv" style="display:none;float: right;">
+								<input type="text" class="form-control" placeholder="Search"  ng-model="searchTextData" style="">
+							</div>
+
+								<div class="col-sm-6">
+										<input type="hidden" ng-model="searchText">
+								</div>
+
+					<div ng-if="(wines | filter:searchTextData |filter:searchText.value).length<1">
+							<div class= "text-center" style="font-size: 25px;color: #b04a23;;margin-top: 80px;">
+							Result not found
+						</div>
+					</div>
+						<!--div ng-if="(wines |filter:searchText.value).length<1">
+								<div class= "text-center" style="font-size: 25px;color: #b04a23;;margin-top: 80px;">
+								Result not found
+							</div>
+					</div-->
+					<div ng-repeat="w in wines | filter:searchTextData | filter:searchText.value">
+						<!--<h2>{{w.wine}}</h2>-->
+						<div class="row" style="margin-top: 28px;">
+							<div class="col-md-3 col-sm-4 col-xs-6" style="margin-top: 81px;">
+								<img class="imagebottle" src="{{w.producer | removeSpaces}}/{{w.image}}" class="img-thumbnail"  style="height: 400px;"/>
+							</div>
+							<div class="col-md-8 wineSpecs">
+								<h3>Tasting Notes</h3>
+								<p>{{w.notes}}</p>
+								<h3>Wine Specs</h3>
+								<p><strong>Grapes:</strong> {{w.grape}}</p>
+								<p><strong>Region:</strong> {{w.region}}</p>
+								<p><strong>Exposure:</strong> {{w.exposure}}</p>
+								<p><strong>Soil:</strong> {{w.soil}}</p>
+								<p><strong>Total Production:</strong> {{w.production}} bottles</p>
+								<p><strong>Vinification Process:</strong> {{w.vinproc}}</p>
+								<p><strong>Alcohol Content:</strong> {{w.alc}}</p>
+								<p><strong>Winemaker:</strong> {{w.maker}}</p>
+								<p><strong>Cellaring:</strong> {{w.cellaring}}</p>
+								<p><strong>Closure:</strong> {{w.closure}}</p>
+								<p><strong>Food/Menu Pairing:</strong> {{w.pairing}}</p>
+								<p><strong>Volume:</strong> {{w.volume}}</p>
+								<!--<h3>Format Sizes</h3>-->
+								<!--<p style="margin-bottom: 5px;">volume: {{w.volume}}</p>
+								<p style="margin-bottom: 5px;">375ml: no</p>
+								<p style="margin-bottom: 5px;">750ml: yes</p>
+								<p style="margin-bottom: 5px;">1.5L: no</p>
+								<p style="margin-bottom: 5px;">Other: no</p>-->
+							</div>
+							<!--<div class="col-md-3">
+								<a href="{{w.producer}}/{{w.techSheet}}"><img src="{{w.producer}}/{{w.TSPreview}}"/></a>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- maps original location -->
+		<div class="col-md-9" ng-hide="hideReviews">
+			<div class="row">
+				<h2>Reviews</h2>
+				<table st-table="displayedReviews" st-safe-src="reviews" class="table table-striped">
+					<thead>
+						<tr>
+							<th st-sort="wine">Wine</th>
+							<th st-sort="vintage">Vintage</th>
+							<th st-sort="theDate">Publication / Date</th>
+							<th st-sort="score">Score</th>
+							<th>Purchase</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="r in displayedReviews">
+							<td>{{r.wine}}</td>
+							<td>{{r.vintage}}</td>
+							<td>{{r.theDate}}</td>
+							<td>{{r.score}}</td>
+							<td>$$</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5" class="text-center">
+								<div st-pagination="" st-items-by-page="6" st-displayed-pages="7"></div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	<div class="row" ng-hide="hideWines">
+		<div class="col-md-12">
+			<wrap-owlcarousel class="owl-carousel carousel"
+				data-options="{items: 5, loop: false, pagination: false, nav: true, navText: false, responsiveClass: true}">
+				<div owl-carousel-item="" class="image-box"  ng-repeat="w in wines" style="margin-left: 53px;">
+					<div class="overlay-container">
+						<!--<img src="Jermann/BottleShots/Jermann-Afix_BS.JPG"/>-->
+						<img src="{{w.producer | removeSpaces}}/{{w.preview}}"    alt="{{w.name}}"/>
+					</div>
+					<div class="image-box-body">
+						<p><a ng-click="selectWine(w.name)">{{w.name | limitTo:20}}</a></p>
+						<!--<p>Vintange: {{w.vintage}}</p>-->
+					</div>
+				</div>
+			</wrap-owlcarousel>
+		</div>
+	</div>
+</div>

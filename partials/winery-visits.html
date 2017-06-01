@@ -1,0 +1,39 @@
+<div class="main-content">
+<section style="background-color: #f5f5f5;">
+	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="#/">Home</a></li>
+		  <li class="active">Winery Visits</li>
+		</ol>
+	</div>
+</section>
+
+    <div class="section clearfix" style="padding: 0px;" data-animation-effect="fadeInUpSmall" data-effect-delay="300">
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Winery Visits</h2>
+				<div class="separator-2"></div>
+
+				<!-- isotope filters start -->
+				<div class="filters" opt-kind ok-key="filter">
+					<ul class="nav nav-pills">
+						<li class="active"><a href="#" ok-sel="*">All</a></li>
+						<li><a href="#" ok-sel=".Italy">Italy</a></li>
+						<li><a href="#" ok-sel=".NewZealand">New Zealand</a></li>
+						<li><a href="#" ok-sel=".Chile">Chile</a></li>
+					</ul>
+				</div>
+				<!-- isotope filters end -->
+
+				<ul id="isotopeContainer" isotope-container class="isotope">
+					<li ng-repeat="wv in wineryVisits | filter:searchContent" isotope-item class="{{wv.country |removeSpaces}}" style="width: 170px; float: left; margin: 5px; overflow: hidden;">
+							<img src="images/{{wv.folderName}}.gif"   alt="{{wv.producer}}" style="height: 125px; width: 125px">
+							<a ng-click="open(wv);" class="btn btn-gray" style="max-width: 125px; min-width: 125px; font-size: 10px; margin-bottom: 0px;">{{wv.producer}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

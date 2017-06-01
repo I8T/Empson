@@ -1,0 +1,127 @@
+
+<div id="slide47" style="display:none;">
+<h5>Washington</h5>
+<?= $disclosure ?>
+<li>
+<p><b>McCarthy & Schiering </b>
+<br />2401-B Queen Anne Avenue N  
+<br />Seattle WA 98109                 
+<br />Phone: 206 2828500            
+<br />E-Mail: <a href="mailto:queenanne@mccarthyandschiering.com">queenanne@mccarthyandschiering.com</a>
+<br />Website: <a href="http://www.mccarthyandschiering.com" target="_blank">www.mccarthyandschiering.com</a>
+</p>
+</li>
+
+<li style="height:500px">&nbsp;</li>
+</ul>
+
+</div>
+
+
+<div id="slide49" style="display:none;">
+<h5>Wisconsin</h5>
+<?= $disclosure ?>
+<ul>
+<li>
+<p><b>Steve's Liquors</b>
+<br />3618 University Ave 
+<br />Madison, WI 53705                
+<br />Phone: (608) 233-6193
+<br />E-Mail: <a href="mailto:randy.stevesmckee@gmail.com">randy.stevesmckee@gmail.com</a>
+<br />Website: <a href="http://www.stevesknows.com" target="_blank">www.stevesknows.com</a>
+</p>
+</li>
+<li>
+<p><b>Thief Wine Bar</b>
+<br />400 North Water Street
+<br />Milwaukee, WI 53202                
+<br />Phone: (414) 277-7707
+<br />E-Mail: <a href="mailto:info@thiefwine.com">info@thiefwine.com</a>
+<br />Website: <a href="http://www.thiefwine.com" target="_blank">www.thiefwine.com</a>
+</p>
+</li>
+<li>
+<p><b>Ray's Liquors</b>
+<br />8930 W. North Avenue
+<br />8930 W. North Avenue Wauwatosa, WI 53226                
+<br />Phone: (414) 258-9821
+<br />E-Mail: <a href="mailto:rayswine@rayswine.com">rayswine@rayswine.com</a>
+<br />Website: <a href="http://www.rayswine.com" target="_blank">www.rayswine.com</a>
+</p>
+</li>
+<li>
+<p><b>Waterford Wine Shop</b>
+<br />1327 E Brady St
+<br />Milwaukee, WI 53202                
+<br />Phone: (414) 289-9463
+<br />E-Mail: <a href="mailto:Waterford@waterfordwine.com">Waterford@waterfordwine.com</a>
+<br />Website: <a href="http://www.waterfordwine.com" target="_blank">www.waterfordwine.com</a>
+</p>
+</li>
+<li>
+<p><b>McKnight and Carlson Wine Shop</b>
+<br />1350 W College Ave # C
+<br />Appleton, WI 54914                
+<br />Phone: (920) 734-0068
+<br />E-Mail: <a href="mailto:info@mc-wines.com">info@mc-wines.com</a>
+<br />Website: <a href="http://www.mc-wines.com" target="_blank">www.mc-wines.com</a>
+</p>
+</li>
+<li style="height:500px">&nbsp;</li>
+</ul>
+
+</div>
+
+<div id="slide51" style="display:none;">
+<h5>Washington D.C.</h5>
+<?= $disclosure ?>
+<ul>
+<li>
+<p><b>Pearsons Wine &amp; Spirits</b>
+<br />2436 Wisconsin Ave, NW
+<br />Washington, DC 20007
+<br />Phone: 202.333.6666
+<br />E-Mail: <a href="mailto:">news@pearsonswine.com</a>
+<br />Website: <a href="http://www.pearsonswine.com" target="_blank">www.pearsonswine.com</a>
+</p>
+</li>
+
+<li>
+<p><b>Calvert Woodley Wines &amp; Spirits</b>
+<br />4339 Connecticut Ave, NW
+<br />Washington, DC 20008
+<br />Phone: 202.966.4400
+<br />E-Mail: <a href="mailto:wine@calvertwoodley.com">wine@calvertwoodley.com</a>
+<br />Website: <a href="http://www.calvertwoodley.com" target="_blank">www.calvertwoodley.com</a>
+</p>
+</li>
+
+<li>
+<p><b>Wide World of Wines</b>
+<br />2201 Wisconsin Ave, NW
+<br />Washington, DC 20007
+<br />Phone: 202.333.7500
+<br />E-Mail: <a href="mailto:wwwines1@aol.com">wwwines1@aol.com</a>
+<br />Website: <a href="http://www.wideworldofwines.com" target="_blank">www.wideworldofwines.com</a>
+</p>
+</li>
+
+<li>
+<p><b>Addy Bassin's MacArthur Beverages</b>
+<br />4877 MacArthur Blvd., NW
+<br />Washington, DC 20007
+<br />Phone: 202.338.1433
+<br />E-Mail: <a href="mailto:wine@bassins.com">wine@bassins.com</a>
+<br />Website: <a href="http://www.bassins.com" target="_blank">www.bassins.com</a>
+</p>
+</li>
+
+<li>
+<p><b>Circle Wine & Spirits</b>
+<br />5501 Connecticut Ave, NW
+<br />Washington, DC 20015
+<br />Phone: 202.966.0600
+<br />E-Mail: <a href="mailto:info@circlewine.net">info@circlewine.net</a>
+<br />Website: <a href="http://www.circlewineandspirits.com" target="_blank">www.circlewineandspirits.com</a>
+</p>
+</li>
